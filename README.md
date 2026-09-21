@@ -4,6 +4,8 @@
 
 Liens pour des vidéos d'exemples : [Projet Pluridisciplinaire](https://www.youtube.com/results?search_query=Projet+pluridisciplinaire+unilasalle+amiens)
 
+## Bibliothèques utilisés
+- Servo : https://docs.arduino.cc/libraries/servo/
 ## À faire :
 - [ ] Montage Robot en filmant les parties
 - [ ] Calibration des Servos
