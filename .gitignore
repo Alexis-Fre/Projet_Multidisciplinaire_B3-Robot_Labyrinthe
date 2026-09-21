@@ -1,0 +1,15 @@
+# Fichiers de compilation (Arduino / C++)
+build/
+*.elf
+*.hex
+*.bin
+*.o
+
+# Fichiers générés par les Systèmes d'Exploitation
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Fichiers de configuration IDE locaux (VS Code, PlatformIO, etc.)
+.vscode/
+.pio/
