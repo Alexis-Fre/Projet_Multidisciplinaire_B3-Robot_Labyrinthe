@@ -5,7 +5,7 @@
 
 Liens pour des vidéos d'exemples : [Projet Pluridisciplinaire](https://www.youtube.com/results?search_query=Projet+pluridisciplinaire+unilasalle+amiens)
 
-## 🎯 Cahier des charges et Objectifs
+## Cahier des charges et Objectifs
 - **Objectif principal :** Parcourir un labyrinthe (taille standard, configuration dévoilée au départ) le plus rapidement possible.
 - **Fonctionnement :** Robot 100% autonome après activation (le chrono démarre à l'activation). Aucune intervention humaine autorisée.
 - **Matériel :** Utilisation stricte des composants du kit fourni. **Exception :** Les supports imprimés en 3D sont autorisés. Toutes les sources d'énergie doivent être embarquées.
@@ -13,14 +13,14 @@ Liens pour des vidéos d'exemples : [Projet Pluridisciplinaire](https://www.yout
 - **Navigation :** Intégration d'algorithmes de navigation et potentiellement de cartographie en temps réel.
 - **Classement :** Basé sur le temps de parcours (critères de départage en cas d'égalité).
 
-## 📦 Livrables
+## Livrables
 - [ ] **Vidéo (en Anglais) :** Preuve de la performance du robot dans le labyrinthe (à rendre sur clé USB, YouTube, Dailymotion...).
 - [ ] **Rapport (en Français).**
 
-## 🛠️ Bibliothèques utilisées
+## Bibliothèques utilisées
 - Servo : https://docs.arduino.cc/libraries/servo/
 
-## 📋 À faire :
+## À faire :
 - [ ] Montage du Robot (penser à filmer les étapes pour la vidéo en anglais).
 - [ ] Modélisation paramétrique sous FreeCAD du support pour la carte et les 3 capteurs lasers.
 - [ ] Impression 3D des supports.
