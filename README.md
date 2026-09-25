@@ -1,9 +1,11 @@
 # Projet_Multidisciplinaire_B3-Robot_Labyrinthe
 ![Image du Robot](Liens de github vers l'image)
+
 **Membres du Groupe :** Papa Mbaye Diop - Alexis Freville
 **Nom du Groupe :** [À définir]
 
 Liens pour des vidéos d'exemples : [Projet Pluridisciplinaire](https://www.youtube.com/results?search_query=Projet+pluridisciplinaire+unilasalle+amiens)
+Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6bP1PL6xV9Bm0Bw2ANZ7lBGQ?usp=drive_link)
 
 ## Cahier des charges et Objectifs
 - **Objectif principal :** Parcourir un labyrinthe (taille standard, configuration dévoilée au départ) le plus rapidement possible.
