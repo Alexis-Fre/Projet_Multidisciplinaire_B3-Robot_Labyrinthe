@@ -26,7 +26,7 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 - [ ] Montage du Robot (penser à filmer les étapes pour la vidéo en anglais).
 - [ ] Modélisation paramétrique sous FreeCAD du support pour la carte et les 3 capteurs lasers.
 - [ ] Impression 3D des supports.
-- [ ] Calibration matérielle et logicielle des Servomoteurs.
+- [X] Calibration matérielle et logicielle des Servomoteurs. (Code créer dans `Codes/Servos/Calibration_Servos`)
 - [ ] Calibration de la distance de détection des capteurs lasers.
 - [ ] Développement de l'algorithme de navigation (C++).
 - [ ] Tests physiques dans le labyrinthe et ajustements.
