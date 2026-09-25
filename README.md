@@ -26,7 +26,7 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 
 ## À faire :
 ### Code :
-- [ ] Faire la schematic du montage du code `Avancer.ino`
+- [X] Faire la schematic du montage du code `Avancer.ino`
 - [X] Calibration matérielle et logicielle des Servomoteurs. (Code créer dans `Codes/Servos/Calibration_Servos`)
 - [ ] Calibration de la distance de détection des capteurs lasers.
 - [ ] Développement de l'algorithme de navigation (C++).
@@ -37,4 +37,4 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 - [ ] Modélisation paramétrique sous FreeCAD du support pour la carte et les 3 capteurs lasers.
 
 ### Autres
-- [ ] Modélisation / Impression 3D des supports.
+- [ ] Modélisation / Impression 3D des supports des capteurs
