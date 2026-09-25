@@ -2,9 +2,11 @@
 ![Image du Robot](Liens de github vers l'image)
 
 **Membres du Groupe :** Papa Mbaye Diop - Alexis Freville
+
 **Nom du Groupe :** [À définir]
 
 Liens pour des vidéos d'exemples : [Projet Pluridisciplinaire](https://www.youtube.com/results?search_query=Projet+pluridisciplinaire+unilasalle+amiens)
+
 Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6bP1PL6xV9Bm0Bw2ANZ7lBGQ?usp=drive_link)
 
 ## Cahier des charges et Objectifs
@@ -23,10 +25,16 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 - Servo : https://docs.arduino.cc/libraries/servo/
 
 ## À faire :
-- [ ] Montage du Robot (penser à filmer les étapes pour la vidéo en anglais).
-- [ ] Modélisation paramétrique sous FreeCAD du support pour la carte et les 3 capteurs lasers.
-- [ ] Impression 3D des supports.
+### Code :
+- [ ] Faire la schematic du montage du code `Avancer.ino`
 - [X] Calibration matérielle et logicielle des Servomoteurs. (Code créer dans `Codes/Servos/Calibration_Servos`)
 - [ ] Calibration de la distance de détection des capteurs lasers.
 - [ ] Développement de l'algorithme de navigation (C++).
 - [ ] Tests physiques dans le labyrinthe et ajustements.
+
+### Vidéo / Rapport :
+- [ ] Montage du Robot (penser à filmer les étapes pour la vidéo en anglais).
+- [ ] Modélisation paramétrique sous FreeCAD du support pour la carte et les 3 capteurs lasers.
+
+### Autres
+- [ ] Modélisation / Impression 3D des supports.
