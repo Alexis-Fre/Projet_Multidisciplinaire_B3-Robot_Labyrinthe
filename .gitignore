@@ -13,3 +13,8 @@ Desktop.ini
 # Fichiers de configuration IDE locaux (VS Code, PlatformIO, etc.)
 .vscode/
 .pio/
+
+#.history/
+*.lck
+*.bak
+*-backups/ Fichiers KiCad à ignorer
