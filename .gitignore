@@ -14,7 +14,8 @@ Desktop.ini
 .vscode/
 .pio/
 
-#.history/
+# Fichiers KiCad à ignorer
+.history/
 *.lck
 *.bak
-*-backups/ Fichiers KiCad à ignorer
+*-backups
