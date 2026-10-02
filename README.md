@@ -1,6 +1,7 @@
 # Projet_Multidisciplinaire_B3-Robot_Labyrinthe
-![Image du Robot](Liens de github vers l'image)
-
+<p align="center">
+  <img src="Photo_projet/Photo_Robot_monter"/>
+</p>
 **Membres du Groupe :** Papa Mbaye Diop - Alexis Freville
 
 **Nom du Groupe :** [À définir]
