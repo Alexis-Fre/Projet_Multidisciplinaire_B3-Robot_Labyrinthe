@@ -1,18 +1,17 @@
 #include <Wire.h>  // Bibliothèque I2C
-#include "Adafruit_VL6180X.h" 
+#include "Adafruit_VL6180X.h"  // Bibliothèque / Driver pour le capteur de distance / lumière
 
-Adafruit_VL6180X vl = Adafruit_VL6180X();
+Adafruit_VL6180X vl = Adafruit_VL6180X(); // Créer un objet I2C
 
 void setup() {
   Serial.begin(9600);
 
-  // wait for serial port to open on native usb devices
   while (!Serial) {
     delay(1);
   }
   
-  Serial.println("Adafruit VL6180x test!");
-  if (! vl.begin()) {
+  Serial.println("VL6180x test!");
+  if (! vl.begin()) { // Initialisation du capteur
     Serial.println("Failed to find sensor");
     while (1);
   }
@@ -20,12 +19,21 @@ void setup() {
 }
 
 void loop() {
-  float lux = vl.readLux(VL6180X_ALS_GAIN_5);
+  float lux = vl.readLux(VL6180X_ALS_GAIN_5); // Lecture de la lumière mais permet de mesurer la distance aussi. Il faut une valeur de gain faible pour une meilleur estimation de la distance et inversement
+  // Variable de gain :
+  // VL6180X_ALS_GAIN_1
+  // VL6180X_ALS_GAIN_1_25
+  // VL6180X_ALS_GAIN_1_67
+  // VL6180X_ALS_GAIN_2_5
+  // VL6180X_ALS_GAIN_5
+  // VL6180X_ALS_GAIN_10
+  // VL6180X_ALS_GAIN_20
+  // VL6180X_ALS_GAIN_40
 
   Serial.print("Lux: "); Serial.println(lux);
   
-  uint8_t range = vl.readRange();
-  uint8_t status = vl.readRangeStatus();
+  uint8_t range = vl.readRange(); // Lecture de la distance (entre 0 et 200)
+  uint8_t status = vl.readRangeStatus(); // Permet d'avoir des erreurs de déjà renseigné
 
   if (status == VL6180X_ERROR_NONE) {
     Serial.print("Range: "); Serial.println(range);
