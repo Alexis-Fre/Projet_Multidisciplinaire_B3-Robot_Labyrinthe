@@ -1,7 +1,9 @@
 # Projet_Multidisciplinaire_B3-Robot_Labyrinthe
+
 <p align="center">
   <img src="Photo_projet/Photo_Robot_monter"/>
 </p>
+
 **Membres du Groupe :** Papa Mbaye Diop - Alexis Freville
 
 **Nom du Groupe :** [À définir]
@@ -30,12 +32,11 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 - [X] Faire la schematic du montage du code `Avancer.ino`
 - [X] Calibration matérielle et logicielle des Servomoteurs. (Code créer dans `Codes/Servos/Calibration_Servos`)
 - [ ] Calibration de la distance de détection des capteurs lasers.
-- [ ] Développement de l'algorithme de navigation (C++).
+- [ ] Développement de l'algorithme de navigation.
 - [ ] Tests physiques dans le labyrinthe et ajustements.
 
 ### Vidéo / Rapport :
 - [ ] Montage du Robot (penser à filmer les étapes pour la vidéo en anglais).
-- [ ] Modélisation paramétrique sous FreeCAD du support pour la carte et les 3 capteurs lasers.
 
 ### Autres
 - [ ] Modélisation / Impression 3D des supports des capteurs
