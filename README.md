@@ -31,7 +31,7 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 ### Code :
 - [X] Faire la schematic du montage du code `Avancer.ino`
 - [X] Calibration matérielle et logicielle des Servomoteurs. (Code créer dans `Codes/Servos/Calibration_Servos`)
-- [ ] Calibration de la distance de détection des capteurs lasers.
+- [X] Calibration de la distance de détection des capteurs lasers.
 - [ ] Développement de l'algorithme de navigation.
 - [ ] Tests physiques dans le labyrinthe et ajustements.
 
