@@ -19,7 +19,8 @@ void setup() {
 }
 
 void loop() {
-  float lux = vl.readLux(VL6180X_ALS_GAIN_5); // Lecture de la lumière mais permet de mesurer la distance aussi. Il faut une valeur de gain faible pour une meilleur estimation de la distance et inversement
+  float lux = vl.readLux(VL6180X_ALS_GAIN_5); // Lecture de la lumière mais permet de mesurer la distance aussi. 
+                                              // Il faut une valeur de gain faible pour une meilleur estimation de la distance avec une luminosité haute et inversement
   // Variable de gain :
   // VL6180X_ALS_GAIN_1
   // VL6180X_ALS_GAIN_1_25
