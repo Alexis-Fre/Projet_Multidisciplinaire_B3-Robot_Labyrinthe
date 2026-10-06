@@ -34,6 +34,7 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 - [X] Calibration de la distance de détection des capteurs lasers.
 - [ ] Développement de l'algorithme de navigation.
 - [ ] Tests physiques dans le labyrinthe et ajustements.
+- [X] Test de tous les capteurs de distance
 
 ### Vidéo / Rapport :
 - [ ] Montage du Robot (penser à filmer les étapes pour la vidéo en anglais).
