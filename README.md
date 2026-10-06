@@ -35,6 +35,7 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 - [ ] Développement de l'algorithme de navigation.
 - [ ] Tests physiques dans le labyrinthe et ajustements.
 - [X] Test de tous les capteurs de distance
+- [ ] Test de la communication I2C avec les capteurs de distance mis sur le même bus
 
 ### Vidéo / Rapport :
 - [ ] Montage du Robot (penser à filmer les étapes pour la vidéo en anglais).
