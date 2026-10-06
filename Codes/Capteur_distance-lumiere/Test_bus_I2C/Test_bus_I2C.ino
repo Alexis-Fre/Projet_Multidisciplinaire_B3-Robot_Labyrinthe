@@ -17,6 +17,16 @@ const int PIN_CE[nb_capteurs] = { 2, 3, 4 };
 // Adresse I2C attribuer
 const uint8_t ADRESSES_I2C[nb_capteurs] = { 0x30, 0x31, 0x32 };
 
+// Stockage des données des capteurs
+struct DonneesCapteur {
+  float lux;
+  uint8_t distance;
+  uint8_t statut;
+};
+
+// Tableau de stockage global
+DonneesCapteur valeurs_capteurs[nb_capteurs];
+
 void setup() {
   Serial.begin(9600);
 
@@ -48,56 +58,69 @@ void setup() {
 }
 
 void loop() {
-  
-  // float lux = capteur_1.readLux(VL6180X_ALS_GAIN_5); // Lecture de la lumière mais permet de mesurer la distance aussi. 
-                                                        // Il faut une valeur de gain faible pour une meilleur estimation de la distance avec une luminosité haute et inversement
-  // Variable de gain :
-  // VL6180X_ALS_GAIN_1
-  // VL6180X_ALS_GAIN_1_25
-  // VL6180X_ALS_GAIN_1_67
-  // VL6180X_ALS_GAIN_2_5
-  // VL6180X_ALS_GAIN_5
-  // VL6180X_ALS_GAIN_10
-  // VL6180X_ALS_GAIN_20
-  // VL6180X_ALS_GAIN_40
+  // Met à jour les données des 3 capteurs
+    lire_capteurs(VL6180X_ALS_GAIN_5);
 
-  // Serial.print("Lux: "); Serial.println(lux);
-  
-  // uint8_t range = capteur_1.readRange(); // Lecture de la distance (entre 0 et 200)
-  // uint8_t status = capteur_1.readRangeStatus(); // Permet d'avoir des erreurs de déjà renseigné
-
-  // if (status == VL6180X_ERROR_NONE) {
-  //  Serial.print("Range: "); Serial.println(range);
-  // }
-
-  // Some error occurred, print it out!
-  
-  // if  ((status >= VL6180X_ERROR_SYSERR_1) && (status <= VL6180X_ERROR_SYSERR_5)) {
-  //   Serial.println("System error");
-  // }
-  // else if (status == VL6180X_ERROR_ECEFAIL) {
-  //   Serial.println("ECE failure");
-  // }
-  // else if (status == VL6180X_ERROR_NOCONVERGE) {
-  //   Serial.println("No convergence");
-  // }
-  // else if (status == VL6180X_ERROR_RANGEIGNORE) {
-  //   Serial.println("Ignoring range");
-  // }
-  // else if (status == VL6180X_ERROR_SNR) {
-  //   Serial.println("Signal/Noise error");
-  // }
-  // else if (status == VL6180X_ERROR_RAWUFLOW) {
-  //   Serial.println("Raw reading underflow");
-  // }
-  // else if (status == VL6180X_ERROR_RAWOFLOW) {
-  //   Serial.println("Raw reading overflow");
-  // }
-  // else if (status == VL6180X_ERROR_RANGEUFLOW) {
-  //   Serial.println("Range reading underflow");
-  // }
-  // else if (status == VL6180X_ERROR_RANGEOFLOW) {
-  //   Serial.println("Range reading overflow");
-  // }
-  // delay(50);
+    // Affichage des résultats pour le moniteur série
+    for (int i = 0; i < nb_capteurs; i++) {
+      Serial.print("--- Capteur "); Serial.print(i + 1); Serial.println(" ---");
+      
+      if (valeurs_capteurs[i].statut == VL6180X_ERROR_NONE) {
+        Serial.print("Distance: "); Serial.print(valeurs_capteurs[i].distance); Serial.println(" mm");
+        Serial.print("Lux: "); Serial.println(valeurs_capteurs[i].lux);
+      } else {
+        Serial.print("Erreur de lecture. Code : "); 
+        Serial.println(valeurs_capteurs[i].statut);
+        if  ((valeurs_capteurs[i].statut >= VL6180X_ERROR_SYSERR_1) && (valeurs_capteurs[i].statut <= VL6180X_ERROR_SYSERR_5)) {
+          Serial.println("System error");
+        }
+        else if (valeurs_capteurs[i].statut == VL6180X_ERROR_ECEFAIL) {
+          Serial.println("ECE failure");
+        }
+        else if (valeurs_capteurs[i].statut == VL6180X_ERROR_NOCONVERGE) {
+          Serial.println("No convergence");
+        }
+        else if (valeurs_capteurs[i].statut == VL6180X_ERROR_RANGEIGNORE) {
+          Serial.println("Ignoring range");
+        }
+        else if (valeurs_capteurs[i].statut == VL6180X_ERROR_SNR) {
+          Serial.println("Signal/Noise error");
+        }
+        else if (valeurs_capteurs[i].statut == VL6180X_ERROR_RAWUFLOW) {
+          Serial.println("Raw reading underflow");
+        }
+        else if (valeurs_capteurs[i].statut == VL6180X_ERROR_RAWOFLOW) {
+          Serial.println("Raw reading overflow");
+        }
+        else if (valeurs_capteurs[i].statut == VL6180X_ERROR_RANGEUFLOW) {
+          Serial.println("Range reading underflow");
+        }
+        else if (valeurs_capteurs[i].statut == VL6180X_ERROR_RANGEOFLOW) {
+          Serial.println("Range reading overflow");
+        }
+      }
+    }
+    
+    Serial.println();
+    delay(150); // Pause pour éviter de saturer le bus I2C
 }
+
+void lire_capteurs(uint8_t gain_lux) {
+  for (int i = 0; i < nb_capteurs; i++) {
+    // 1. Lecture de la luminosité avec le gain choisi
+    valeurs_capteurs[i].lux = capteurs[i].readLux(gain_lux);
+    
+    // 2. Lecture du statut (erreurs éventuelles)
+    valeurs_capteurs[i].statut = capteurs[i].readRangeStatus();
+    
+    // 3. Lecture de la distance uniquement s'il n'y a pas d'erreur
+    if (valeurs_capteurs[i].statut == VL6180X_ERROR_NONE) {
+      valeurs_capteurs[i].distance = capteurs[i].readRange();
+    } else {
+      // Valeur arbitraire de sécurité (ex: 255) pour indiquer 
+      // à l'algorithme qu'il manque une donnée de distance.
+      valeurs_capteurs[i].distance = 255; 
+    }
+  }
+}
+
