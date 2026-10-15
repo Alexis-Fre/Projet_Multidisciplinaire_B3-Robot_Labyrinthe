@@ -110,12 +110,15 @@ void lire_capteurs(uint8_t gain_lux) {
     // 1. Lecture de la luminosité avec le gain choisi
     valeurs_capteurs[i].lux = capteurs[i].readLux(gain_lux);
     
-    // 2. Lecture du statut (erreurs éventuelles)
+    // 2. Lecture de la distance
+    uint8_t distance_brute = capteurs[i].readRange();
+
+    // 3. Lecture du statut (erreurs éventuelles)
     valeurs_capteurs[i].statut = capteurs[i].readRangeStatus();
     
-    // 3. Lecture de la distance uniquement s'il n'y a pas d'erreur
+    // 4. Lecture de la distance uniquement s'il n'y a pas d'erreur
     if (valeurs_capteurs[i].statut == VL6180X_ERROR_NONE) {
-      valeurs_capteurs[i].distance = capteurs[i].readRange();
+      valeurs_capteurs[i].distance = distance_brute;
     } else {
       // Valeur arbitraire de sécurité (ex: 255) pour indiquer 
       // à l'algorithme qu'il manque une donnée de distance.
