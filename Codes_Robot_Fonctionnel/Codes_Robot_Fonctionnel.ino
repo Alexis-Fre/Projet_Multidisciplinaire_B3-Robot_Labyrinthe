@@ -3,14 +3,16 @@
 #include "moteurs.h" // Inclusion de ton fichier de fonctions
 
 #define nb_capteurs 3
-#define SEUIL_MUR 50 // Distance en mm en dessous de laquelle on considère qu'il y a un mur
+#define SEUIL_MUR 100 // Distance en mm en dessous de laquelle on considère qu'il y a un mur
 
 #define CAPTEUR_GAUCHE 2 // Index des capteurs basé sur le schéma
 #define CAPTEUR_FACE   1
 #define CAPTEUR_DROITE 0
 
 Adafruit_VL6180X capteurs[nb_capteurs] = {
-  Adafruit_VL6180X(), Adafruit_VL6180X(), Adafruit_VL6180X()
+  Adafruit_VL6180X(),
+  Adafruit_VL6180X(),
+  Adafruit_VL6180X()
 };
 
 const int PIN_CE[nb_capteurs] = { 2, 3, 4 };
@@ -44,11 +46,13 @@ void setup() {
     }
   }
   Serial.println("Robot Pret !");
-  delay(2000); // Pause avant de démarrer les moteurs
+  Serial.println("Moteurs arreter");
+  arreter();
+  delay(5000); // Pause avant de démarrer les moteurs
 }
 
 void loop() {
-  lire_capteurs(VL6180X_ALS_GAIN_5);
+  lire_capteurs(VL6180X_ALS_GAIN_1_67);
 
   uint8_t dist_gauche = valeurs_capteurs[CAPTEUR_GAUCHE].distance;
   uint8_t dist_face   = valeurs_capteurs[CAPTEUR_FACE].distance;
@@ -95,7 +99,7 @@ void loop() {
   }
   
   // Petite pause pour ne pas saturer le moniteur série et l'I2C
-  delay(150);
+  delay(10);
 }
 
 void lire_capteurs(uint8_t gain_lux) {
