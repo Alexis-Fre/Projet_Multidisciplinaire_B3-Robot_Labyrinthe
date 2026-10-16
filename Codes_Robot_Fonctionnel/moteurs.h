@@ -6,19 +6,16 @@
 Servo servoGauche;
 Servo servoDroite;
 
-// Temps de rotation calibrés (ms)
-#define TEMPS_ROTATION_DROITE 325
-#define TEMPS_ROTATION_GAUCHE 470
-#define TEMPS_DEMI_TOUR       650
+// Temps de rotation ajustés pour la vitesse adoucie (à affiner au besoin)
+#define TEMPS_ROTATION_DROITE 600
+#define TEMPS_ROTATION_GAUCHE 850
+#define TEMPS_DEMI_TOUR       1200
 
-// Signal d'arrêt absolu
 #define SIGNAL_ARRET 1500
 
 void init_moteurs() {
-  servoGauche.attach(10); // Pin PWM servo gauche
-  servoDroite.attach(9);  // Pin PWM servo droite
-
-  // Arrêt parfait au démarrage (1500 µs)
+  servoGauche.attach(10);
+  servoDroite.attach(9);
   servoGauche.writeMicroseconds(SIGNAL_ARRET);
   servoDroite.writeMicroseconds(SIGNAL_ARRET);
 }
@@ -30,42 +27,41 @@ void arreter() {
 
 void avancer(bool correction_gauche = false, bool correction_droite = false) {
   if (correction_gauche) {
-    // Ralentit la roue gauche (se rapproche de 1500 µs)
-    servoGauche.writeMicroseconds(1560); 
-    servoDroite.writeMicroseconds(1400);
+    // Ralentit la roue gauche pour corriger vers la gauche
+    servoGauche.writeMicroseconds(1540); 
+    servoDroite.writeMicroseconds(1420);
   } 
   else if (correction_droite) {
-    servoGauche.writeMicroseconds(1600);
-    // Ralentit la roue droite (se rapproche de 1500 µs)
-    servoDroite.writeMicroseconds(1460); 
+    // Boost la roue gauche et ralentit la roue droite pour corriger vers la droite
+    servoGauche.writeMicroseconds(1630);
+    servoDroite.writeMicroseconds(1470); 
   } 
   else {
-    // Vitesse lente et constante
-    // Droite < 1500 µs = avance | Gauche > 1500 µs = avance
-    servoDroite.writeMicroseconds(1400); 
-    servoGauche.writeMicroseconds(1600); 
+    // Ligne droite équilibrée (moteur gauche compensé à +130 µs, droit à -80 µs)
+    servoDroite.writeMicroseconds(1420); 
+    servoGauche.writeMicroseconds(1630); 
   }
 }
 
-void tourner_droite() {
-  servoGauche.writeMicroseconds(1600); // Gauche avance
-  servoDroite.writeMicroseconds(1600); // Droite recule
-  delay(TEMPS_ROTATION_DROITE);
-  arreter();
+// Virages et demi-tours adoucis (impulsion réduite à +/- 50 µs du point neutre)
+void demarrer_tourner_droite() {
+  servoGauche.writeMicroseconds(1550); // Gauche avance doucement
+  servoDroite.writeMicroseconds(1550); // Droite recule doucement
 }
 
-void tourner_gauche() {
-  servoGauche.writeMicroseconds(1400); // Gauche recule
-  servoDroite.writeMicroseconds(1400); // Droite avance
-  delay(TEMPS_ROTATION_GAUCHE);
-  arreter();
+void demarrer_tourner_gauche() {
+  servoGauche.writeMicroseconds(1450); // Gauche recule doucement
+  servoDroite.writeMicroseconds(1450); // Droite avance doucement
 }
 
-void demi_tour() {
-  servoGauche.writeMicroseconds(1600); // Pivote sur place
-  servoDroite.writeMicroseconds(1600);
-  delay(TEMPS_DEMI_TOUR);
-  arreter();
+void demarrer_demi_tour(bool vers_droite = true) {
+  if (vers_droite) {
+    servoGauche.writeMicroseconds(1550);
+    servoDroite.writeMicroseconds(1550);
+  } else {
+    servoGauche.writeMicroseconds(1450);
+    servoDroite.writeMicroseconds(1450);
+  }
 }
 
 #endif
