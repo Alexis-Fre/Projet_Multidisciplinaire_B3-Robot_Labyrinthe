@@ -36,7 +36,7 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 - [ ] Tests physiques dans le labyrinthe et ajustements.
 - [X] Test de tous les capteurs de distance
 - [X] Test de la communication I2C avec les capteurs de distance mis sur le même bus
-- [ ] Schema electronique à faire pour le montage des 3 catpeurs en série sur l'I2C
+- [X] Schema electronique à faire pour le montage des 3 catpeurs en série sur l'I2C
 
 ### Vidéo / Rapport :
 - [ ] Montage du Robot (penser à filmer les étapes pour la vidéo en anglais).
