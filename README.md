@@ -33,7 +33,8 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 - [X] Calibration matérielle et logicielle des Servomoteurs. (Code créer dans `Codes/Servos/Calibration_Servos`)
 - [X] Calibration de la distance de détection des capteurs lasers.
 - [ ] Développement de l'algorithme de navigation.
-- [ ] Tests physiques dans le labyrinthe et ajustements.
+- [X] Tests physiques dans le labyrinthe et ajustements.
+- [ ] Finir les ajustements pour les vitesses de servomoteurs
 - [X] Test de tous les capteurs de distance
 - [X] Test de la communication I2C avec les capteurs de distance mis sur le même bus
 - [X] Schema electronique à faire pour le montage des 3 catpeurs en série sur l'I2C
