@@ -28,7 +28,7 @@ void setup() {
   Serial.begin(9600);
   while (!Serial) delay(1);
 
-  init_moteurs(); // Appel de la fonction depuis moteurs.h
+  init_moteurs(); 
 
   for (int i = 0 ; i < nb_capteurs ; i++) {
     pinMode(PIN_CE[i], OUTPUT);
@@ -54,36 +54,48 @@ void loop() {
   uint8_t dist_face   = valeurs_capteurs[CAPTEUR_FACE].distance;
   uint8_t dist_droite = valeurs_capteurs[CAPTEUR_DROITE].distance;
 
-  // --- LOGIQUE DE NAVIGATION ---
+  // Affichage des distances mesurées
+  Serial.print("G: "); Serial.print(dist_gauche);
+  Serial.print(" mm | F: "); Serial.print(dist_face);
+  Serial.print(" mm | D: "); Serial.print(dist_droite);
+  Serial.print(" mm  ==>  ACTION : ");
+
+  // --- LOGIQUE DE NAVIGATION AVEC DÉBOGAGE ---
   if (dist_face < SEUIL_MUR) {
-    arreter(); // On stoppe le robot avant de tourner
+    arreter(); 
     delay(100); 
 
     if (dist_droite > SEUIL_MUR) {
+      Serial.println("TOURNER A DROITE");
       tourner_droite();
     } 
     else if (dist_gauche > SEUIL_MUR) {
+      Serial.println("TOURNER A GAUCHE");
       tourner_gauche();
     } 
     else {
+      Serial.println("CUL-DE-SAC -> DEMI-TOUR");
       demi_tour();
     }
   } 
   else {
     // La voie est libre en face
     if (dist_droite < 40) {
-      avancer(true, false);  // Correction vers la gauche
+      Serial.println("AVANCER (Correction legere vers la gauche)");
+      avancer(true, false);  
     }
     else if (dist_gauche < 40) {
-      avancer(false, true);  // Correction vers la droite
+      Serial.println("AVANCER (Correction legere vers la droite)");
+      avancer(false, true);  
     }
     else {
-      avancer(false, false); // Avancer tout droit
+      Serial.println("AVANCER TOUT DROIT");
+      avancer(false, false); 
     }
   }
   
-  // Petite pause pour ne pas saturer l'I2C pendant que le robot avance
-  delay(50);
+  // Petite pause pour ne pas saturer le moniteur série et l'I2C
+  delay(150);
 }
 
 void lire_capteurs(uint8_t gain_lux) {
