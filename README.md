@@ -42,4 +42,4 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 - [ ] Montage du Robot (penser à filmer les étapes pour la vidéo en anglais).
 
 ### Autres
-- [ ] Modélisation / Impression 3D des supports des capteurs
+- [X] Modélisation / Impression 3D des supports des capteurs
