@@ -5,9 +5,9 @@
 #define SEUIL_MUR 50 // Distance en mm en dessous de laquelle on considère qu'il y a un mur
 
 // Index des capteurs basé sur ton schéma de positionnement
-#define CAPTEUR_GAUCHE 0
+#define CAPTEUR_GAUCHE 2
 #define CAPTEUR_FACE   1
-#define CAPTEUR_DROITE 2
+#define CAPTEUR_DROITE 0
 
 Adafruit_VL6180X capteurs[nb_capteurs] = {
   Adafruit_VL6180X(),
