@@ -26,6 +26,8 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 
 ## Bibliothèques utilisées
 - Servo : https://docs.arduino.cc/libraries/servo/
+- VL6180X : https://docs.arduino.cc/libraries/adafruit_vl6180x/
+- Wire : https://docs.arduino.cc/language-reference/en/functions/communication/wire/
 
 ## À faire :
 ### Code :
