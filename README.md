@@ -15,7 +15,7 @@ Drive d'informations : [Drive](https://drive.google.com/drive/folders/1vGQ9Tg1n6
 ## Cahier des charges et Objectifs
 - **Objectif principal :** Parcourir un labyrinthe (taille standard, configuration dévoilée au départ) le plus rapidement possible.
 - **Fonctionnement :** Robot 100% autonome après activation (le chrono démarre à l'activation). Aucune intervention humaine autorisée.
-- **Matériel :** Utilisation stricte des composants du kit fourni. **Exception :** Les supports imprimés en 3D sont autorisés. Toutes les sources d'énergie doivent être embarquées.
+- **Matériel :** Utilisation stricte des composants du kit fourni. Toutes les sources d'énergie doivent être embarquées.
 - **Détection :** 3 capteurs lasers à disposition pour la détection des murs et l'évitement des obstacles.
 - **Navigation :** Intégration d'algorithmes de navigation et potentiellement de cartographie en temps réel.
 - **Classement :** Basé sur le temps de parcours (critères de départage en cas d'égalité).
