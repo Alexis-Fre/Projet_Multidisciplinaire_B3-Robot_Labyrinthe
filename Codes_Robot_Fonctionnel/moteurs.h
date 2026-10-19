@@ -27,19 +27,21 @@ void arreter() {
 
 void avancer(bool correction_gauche = false, bool correction_droite = false) {
   if (correction_gauche) {
-    // Ralentit la roue gauche pour corriger vers la gauche
-    servoGauche.writeMicroseconds(1540); 
+    // Le robot est trop à droite, on veut aller à gauche.
+    // On ralentit FORTEMENT la roue gauche (presque à l'arrêt à 1510)
+    servoGauche.writeMicroseconds(1510); 
     servoDroite.writeMicroseconds(1420);
   } 
   else if (correction_droite) {
-    // Boost la roue gauche et ralentit la roue droite pour corriger vers la droite
+    // Le robot est trop à gauche, on veut aller à droite.
+    // On ralentit FORTEMENT la roue droite (presque à l'arrêt à 1490)
     servoGauche.writeMicroseconds(1630);
-    servoDroite.writeMicroseconds(1470); 
+    servoDroite.writeMicroseconds(1490); 
   } 
   else {
-    // Ligne droite équilibrée (moteur gauche compensé à +130 µs, droit à -80 µs)
+    // Ordre d'aller "tout droit" (même si c'est imparfait mécaniquement)
     servoDroite.writeMicroseconds(1420); 
-    servoGauche.writeMicroseconds(1630); 
+    servoGauche.writeMicroseconds(1580); 
   }
 }
 
