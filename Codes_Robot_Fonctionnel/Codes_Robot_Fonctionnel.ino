@@ -3,7 +3,7 @@
 #include "moteurs.h"
 
 #define nb_capteurs 3
-#define SEUIL_MUR 100
+#define SEUIL_MUR 80 
 
 #define CAPTEUR_GAUCHE 2
 #define CAPTEUR_FACE   1
@@ -26,16 +26,14 @@ DonneesCapteur valeurs_capteurs[nb_capteurs];
 enum EtatRobot {
   AVANCER,
   TOURNER_DROITE,
-  TOURNER_GAUCHE,
-  DEMI_TOUR
+  TOURNER_GAUCHE
 };
 
 EtatRobot etatActuel = AVANCER;
 unsigned long tempsDebutVirage = 0;
 
-// Gestion du temps pour cadencer les mesures I2C sans bloquer
 unsigned long derniereLectureCapteurs = 0;
-const unsigned long INTERVALLE_CAPTEURS = 30; // Lecture toutes les 30 ms
+const unsigned long INTERVALLE_CAPTEURS = 30; 
 
 void setup() {
   Serial.begin(115200);
@@ -64,89 +62,77 @@ void setup() {
 void loop() {
   unsigned long tempsActuel = millis();
 
-  switch (etatActuel) {
+  // On effectue les lectures I2C dans TOUS les états, toutes les 30ms
+  if (tempsActuel - derniereLectureCapteurs >= INTERVALLE_CAPTEURS) {
+    derniereLectureCapteurs = tempsActuel;
+    lire_capteurs();
 
-    case AVANCER:
-      {
-        // On ne lit les capteurs que toutes les 30ms pour ne pas saturer l'I2C
-        if (tempsActuel - derniereLectureCapteurs >= INTERVALLE_CAPTEURS) {
-          derniereLectureCapteurs = tempsActuel;
+    uint8_t dist_gauche = valeurs_capteurs[CAPTEUR_GAUCHE].distance;
+    uint8_t dist_face   = valeurs_capteurs[CAPTEUR_FACE].distance;
+    uint8_t dist_droite = valeurs_capteurs[CAPTEUR_DROITE].distance;
 
-          lire_capteurs();
+    switch (etatActuel) {
 
-          uint8_t dist_gauche = valeurs_capteurs[CAPTEUR_GAUCHE].distance;
-          uint8_t dist_face   = valeurs_capteurs[CAPTEUR_FACE].distance;
-          uint8_t dist_droite = valeurs_capteurs[CAPTEUR_DROITE].distance;
-
+      case AVANCER:
+        {
           Serial.print("G: "); Serial.print(dist_gauche);
           Serial.print(" | F: "); Serial.print(dist_face);
           Serial.print(" | D: "); Serial.println(dist_droite);
 
           if (dist_face < SEUIL_MUR) {
             arreter();
-
-            if (dist_droite > SEUIL_MUR && dist_droite > dist_gauche) {
-              Serial.println("ACTION : TOURNER A DROITE");
+            
+            if (dist_droite > dist_gauche) {
+              Serial.println("ACTION : DEBUT VIRAGE DROITE");
               demarrer_tourner_droite();
               tempsDebutVirage = tempsActuel;
               etatActuel = TOURNER_DROITE;
-            } else if (dist_gauche > SEUIL_MUR) {
-              Serial.println("ACTION : TOURNER A GAUCHE");
-              demarrer_tourner_gauche();
-              tempsDebutVirage = tempsActuel;
-              etatActuel = TOURNER_GAUCHE;
-            } else if (dist_droite > dist_gauche + 25) {
-              Serial.println("ACTION : VIRAGE SERRE A DROITE");
-              demarrer_tourner_droite();
-              tempsDebutVirage = tempsActuel;
-              etatActuel = TOURNER_DROITE;
-            } else if (dist_gauche > dist_droite + 25) {
-              Serial.println("ACTION : VIRAGE SERRE A GAUCHE");
-              demarrer_tourner_gauche();
-              tempsDebutVirage = tempsActuel;
-              etatActuel = TOURNER_GAUCHE;
             } else {
-              Serial.println("ACTION : VRAI CUL-DE-SAC -> DEMI-TOUR");
-              bool sensDroite = (dist_droite >= dist_gauche);
-              demarrer_demi_tour(sensDroite);
+              Serial.println("ACTION : DEBUT VIRAGE GAUCHE");
+              demarrer_tourner_gauche();
               tempsDebutVirage = tempsActuel;
-              etatActuel = DEMI_TOUR;
+              etatActuel = TOURNER_GAUCHE;
             }
           } 
           else {
-            // --- BLOC RETROUVÉ : ORDRE D'AVANCER ---
-            if (dist_droite < 50) {
+            if (dist_droite < 45) {
               avancer(true, false);  // Correction gauche
-            } else if (dist_gauche < 50) {
+            } else if (dist_gauche < 45) {
               avancer(false, true);  // Correction droite
             } else {
               avancer(false, false); // Tout droit
             }
           }
+          break;
         }
-        break;
-      }
 
-    case TOURNER_DROITE:
-      if (tempsActuel - tempsDebutVirage >= TEMPS_ROTATION_DROITE) {
-        arreter();
-        etatActuel = AVANCER;
-      }
-      break;
+      case TOURNER_DROITE:
+        {
+          // Affiche ce que voit le capteur avant PENDANT qu'il tourne
+          Serial.print("SCAN VIRAGE DROITE - Face : "); Serial.println(dist_face);
+          
+          // Condition de fin : on a tourné au moins 300ms (pour dégager le mur) 
+          // ET la voie s'est libérée devant (> 150mm)
+          if (tempsActuel - tempsDebutVirage > 300 && dist_face > 150) {
+            Serial.println("ALIGNEMENT REUSSI -> AVANCER");
+            arreter();
+            etatActuel = AVANCER;
+          }
+          break;
+        }
 
-    case TOURNER_GAUCHE:
-      if (tempsActuel - tempsDebutVirage >= TEMPS_ROTATION_GAUCHE) {
-        arreter();
-        etatActuel = AVANCER;
-      }
-      break;
-
-    case DEMI_TOUR:
-      if (tempsActuel - tempsDebutVirage >= TEMPS_DEMI_TOUR) {
-        arreter();
-        etatActuel = AVANCER;
-      }
-      break;
+      case TOURNER_GAUCHE:
+        {
+          Serial.print("SCAN VIRAGE GAUCHE - Face : "); Serial.println(dist_face);
+          
+          if (tempsActuel - tempsDebutVirage > 300 && dist_face > 150) {
+            Serial.println("ALIGNEMENT REUSSI -> AVANCER");
+            arreter();
+            etatActuel = AVANCER;
+          }
+          break;
+        }
+    }
   }
 }
 
