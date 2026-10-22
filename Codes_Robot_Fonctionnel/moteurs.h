@@ -41,15 +41,15 @@ void avancer(bool correction_gauche = false, bool correction_droite = false) {
 }
 
 void demarrer_tourner_droite() {
-  // Rotations accélérées pour dégager les murs plus vite
-  servoGauche.writeMicroseconds(1580);
-  servoDroite.writeMicroseconds(1580);
+  // Rotation très douce pour scanner le couloir sans le dépasser
+  servoGauche.writeMicroseconds(1540); // Au lieu de 1580
+  servoDroite.writeMicroseconds(1540); 
 }
 
 void demarrer_tourner_gauche() {
-  // Rotations accélérées pour dégager les murs plus vite
-  servoGauche.writeMicroseconds(1420);
-  servoDroite.writeMicroseconds(1420);
+  // Rotation très douce pour scanner le couloir sans le dépasser
+  servoGauche.writeMicroseconds(1460); // Au lieu de 1420
+  servoDroite.writeMicroseconds(1460); 
 }
 
 #endif
