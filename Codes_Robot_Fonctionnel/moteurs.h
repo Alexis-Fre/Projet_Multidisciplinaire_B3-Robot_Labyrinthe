@@ -22,34 +22,31 @@ void arreter() {
 
 void avancer(bool correction_gauche = false, bool correction_droite = false) {
   if (correction_gauche) {
-    // CORRECTION DOUCE : On ralentit un peu la roue gauche (1570 au lieu de 1650)
-    // La roue droite continue de pousser fort (1380)
+    // La roue droite est à 1330 (rapide), on ralentit la gauche pour corriger
     servoGauche.writeMicroseconds(1570); 
-    servoDroite.writeMicroseconds(1380);
+    servoDroite.writeMicroseconds(1330);
   } 
   else if (correction_droite) {
-    // CORRECTION DOUCE : On ralentit un peu la roue droite (1430 au lieu de 1380)
-    servoGauche.writeMicroseconds(1650);
+    // La roue gauche est à 1700 (rapide), on ralentit la droite pour corriger
+    servoGauche.writeMicroseconds(1700);
     servoDroite.writeMicroseconds(1430); 
   } 
   else {
-    // VITESSE V2 : Augmentation d'environ 40-50µs par rapport à la V1
-    // (L'écart compensatoire pour rouler droit est conservé)
-    servoDroite.writeMicroseconds(1380); 
-    servoGauche.writeMicroseconds(1650); 
+    // LIGNE DROITE V2 RAPIDE : 
+    // Écart proportionnel pour contrer la dérive (Gauche pousse plus fort)
+    servoDroite.writeMicroseconds(1330); 
+    servoGauche.writeMicroseconds(1700); 
   }
 }
 
 void demarrer_tourner_droite() {
-  // Rotation très douce pour scanner le couloir sans le dépasser
-  servoGauche.writeMicroseconds(1540); // Au lieu de 1580
-  servoDroite.writeMicroseconds(1540); 
+  servoGauche.writeMicroseconds(1560); 
+  servoDroite.writeMicroseconds(1560); 
 }
 
 void demarrer_tourner_gauche() {
-  // Rotation très douce pour scanner le couloir sans le dépasser
-  servoGauche.writeMicroseconds(1460); // Au lieu de 1420
-  servoDroite.writeMicroseconds(1460); 
+  servoGauche.writeMicroseconds(1440); 
+  servoDroite.writeMicroseconds(1440); 
 }
 
 #endif
