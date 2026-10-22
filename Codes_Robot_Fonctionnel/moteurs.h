@@ -22,19 +22,20 @@ void arreter() {
 
 void avancer(bool correction_gauche = false, bool correction_droite = false) {
   if (correction_gauche) {
-    // CORRECTION DOUCE vers la gauche (on ralentit juste un peu la roue gauche)
-    servoGauche.writeMicroseconds(1550); // (Anciennement 1510)
+    // CORRECTION DOUCE vers la gauche (on ralentit la roue gauche)
+    servoGauche.writeMicroseconds(1550); 
     servoDroite.writeMicroseconds(1420);
   } 
   else if (correction_droite) {
-    // CORRECTION DOUCE vers la droite (on ralentit juste un peu la roue droite)
-    servoGauche.writeMicroseconds(1580);
-    servoDroite.writeMicroseconds(1450); // (Anciennement 1490)
+    // CORRECTION DOUCE vers la droite (on ralentit la roue droite)
+    // On conserve la nouvelle puissance augmentée de la roue gauche
+    servoGauche.writeMicroseconds(1600);
+    servoDroite.writeMicroseconds(1450); 
   } 
   else {
-    // Ligne droite
+    // Ligne droite : Roue gauche boostée à 1600 pour contrer la dérive à gauche
     servoDroite.writeMicroseconds(1420); 
-    servoGauche.writeMicroseconds(1580); 
+    servoGauche.writeMicroseconds(1600); 
   }
 }
 
