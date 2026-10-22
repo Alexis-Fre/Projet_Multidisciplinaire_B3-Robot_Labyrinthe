@@ -4,11 +4,11 @@
 
 #define nb_capteurs 3
 
-// --- PARAMÈTRES DE NAVIGATION À AJUSTER ---
-#define SEUIL_MUR_FACE 80          // Distance (mm) pour détecter un mur frontal et déclencher le virage
-#define SEUIL_CORRECTION_GAUCHE 45 // Distance (mm) min avec le mur gauche avant de corriger la trajectoire
-#define SEUIL_CORRECTION_DROITE 45 // Distance (mm) min avec le mur droit avant de corriger la trajectoire
-#define SEUIL_COULOIR_LIBRE 160    // Distance (mm) frontale requise pour considérer que le virage est terminé
+// --- PARAMÈTRES DE NAVIGATION RECALIBRÉS ---
+#define SEUIL_MUR_FACE 85          // Réduit à 85 mm pour s'engager plus loin dans le virage
+#define SEUIL_CORRECTION_GAUCHE 45 
+#define SEUIL_CORRECTION_DROITE 45 
+#define SEUIL_COULOIR_LIBRE 150    // Ajusté à 150 mm pour valider le nouvel axe
 // ------------------------------------------
 
 #define CAPTEUR_GAUCHE 2
@@ -68,7 +68,6 @@ void setup() {
 void loop() {
   unsigned long tempsActuel = millis();
 
-  // On effectue les lectures I2C dans TOUS les états, toutes les 30ms
   if (tempsActuel - derniereLectureCapteurs >= INTERVALLE_CAPTEURS) {
     derniereLectureCapteurs = tempsActuel;
     lire_capteurs();
@@ -102,11 +101,11 @@ void loop() {
           } 
           else {
             if (dist_droite < SEUIL_CORRECTION_DROITE) {
-              avancer(true, false);  // Correction gauche
+              avancer(true, false);  
             } else if (dist_gauche < SEUIL_CORRECTION_GAUCHE) {
-              avancer(false, true);  // Correction droite
+              avancer(false, true);  
             } else {
-              avancer(false, false); // Tout droit
+              avancer(false, false); 
             }
           }
           break;
@@ -114,11 +113,10 @@ void loop() {
 
       case TOURNER_DROITE:
         {
-          // Affiche ce que voit le capteur avant PENDANT qu'il tourne
           Serial.print("SCAN VIRAGE DROITE - Face : "); Serial.println(dist_face);
           
-          // Condition de fin : on a tourné au moins 300ms ET la voie s'est libérée
-          if (tempsActuel - tempsDebutVirage > 300 && dist_face > SEUIL_COULOIR_LIBRE) {
+          // Tempo réduite à 200ms grâce au pivot plus réactif
+          if (tempsActuel - tempsDebutVirage > 200 && dist_face > SEUIL_COULOIR_LIBRE) {
             Serial.println("ALIGNEMENT REUSSI -> AVANCER");
             arreter();
             etatActuel = AVANCER;
@@ -130,7 +128,7 @@ void loop() {
         {
           Serial.print("SCAN VIRAGE GAUCHE - Face : "); Serial.println(dist_face);
           
-          if (tempsActuel - tempsDebutVirage > 300 && dist_face > SEUIL_COULOIR_LIBRE) {
+          if (tempsActuel - tempsDebutVirage > 200 && dist_face > SEUIL_COULOIR_LIBRE) {
             Serial.println("ALIGNEMENT REUSSI -> AVANCER");
             arreter();
             etatActuel = AVANCER;
