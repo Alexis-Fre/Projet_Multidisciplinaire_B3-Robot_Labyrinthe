@@ -1,7 +1,7 @@
 # Projet Multidisciplinaire B3-Robot Labyrinthe
 
 <p align="center">
-  <img src="Photo_projet/Photo_Robot_monter"/>
+  <img src="Photo_projet/Photo_Robot_Monter.jpg"/>
 </p>
 
 **Membres du Groupe :** Papa Mbaye Diop - Alexis Freville
