@@ -1,4 +1,4 @@
-# Projet_Multidisciplinaire_B3-Robot_Labyrinthe
+# Projet Multidisciplinaire B3-Robot Labyrinthe
 
 <p align="center">
   <img src="Photo_projet/Photo_Robot_monter"/>
