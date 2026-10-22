@@ -3,7 +3,13 @@
 #include "moteurs.h"
 
 #define nb_capteurs 3
-#define SEUIL_MUR 80 
+
+// --- PARAMÈTRES DE NAVIGATION À AJUSTER ---
+#define SEUIL_MUR_FACE 80          // Distance (mm) pour détecter un mur frontal et déclencher le virage
+#define SEUIL_CORRECTION_GAUCHE 45 // Distance (mm) min avec le mur gauche avant de corriger la trajectoire
+#define SEUIL_CORRECTION_DROITE 45 // Distance (mm) min avec le mur droit avant de corriger la trajectoire
+#define SEUIL_COULOIR_LIBRE 100    // Distance (mm) frontale requise pour considérer que le virage est terminé
+// ------------------------------------------
 
 #define CAPTEUR_GAUCHE 2
 #define CAPTEUR_FACE   1
@@ -56,7 +62,7 @@ void setup() {
   }
   Serial.println("Robot Pret !");
   arreter();
-  delay(2000);
+  delay(10000);
 }
 
 void loop() {
@@ -79,7 +85,7 @@ void loop() {
           Serial.print(" | F: "); Serial.print(dist_face);
           Serial.print(" | D: "); Serial.println(dist_droite);
 
-          if (dist_face < SEUIL_MUR) {
+          if (dist_face < SEUIL_MUR_FACE) {
             arreter();
             
             if (dist_droite > dist_gauche) {
@@ -95,9 +101,9 @@ void loop() {
             }
           } 
           else {
-            if (dist_droite < 45) {
+            if (dist_droite < SEUIL_CORRECTION_DROITE) {
               avancer(true, false);  // Correction gauche
-            } else if (dist_gauche < 45) {
+            } else if (dist_gauche < SEUIL_CORRECTION_GAUCHE) {
               avancer(false, true);  // Correction droite
             } else {
               avancer(false, false); // Tout droit
@@ -111,9 +117,8 @@ void loop() {
           // Affiche ce que voit le capteur avant PENDANT qu'il tourne
           Serial.print("SCAN VIRAGE DROITE - Face : "); Serial.println(dist_face);
           
-          // Condition de fin : on a tourné au moins 300ms (pour dégager le mur) 
-          // ET la voie s'est libérée devant (> 150mm)
-          if (tempsActuel - tempsDebutVirage > 300 && dist_face > 150) {
+          // Condition de fin : on a tourné au moins 300ms ET la voie s'est libérée
+          if (tempsActuel - tempsDebutVirage > 300 && dist_face > SEUIL_COULOIR_LIBRE) {
             Serial.println("ALIGNEMENT REUSSI -> AVANCER");
             arreter();
             etatActuel = AVANCER;
@@ -125,7 +130,7 @@ void loop() {
         {
           Serial.print("SCAN VIRAGE GAUCHE - Face : "); Serial.println(dist_face);
           
-          if (tempsActuel - tempsDebutVirage > 300 && dist_face > 150) {
+          if (tempsActuel - tempsDebutVirage > 300 && dist_face > SEUIL_COULOIR_LIBRE) {
             Serial.println("ALIGNEMENT REUSSI -> AVANCER");
             arreter();
             etatActuel = AVANCER;
