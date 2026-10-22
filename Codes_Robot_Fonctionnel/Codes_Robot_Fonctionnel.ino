@@ -8,7 +8,7 @@
 #define SEUIL_MUR_FACE 80          // Distance (mm) pour détecter un mur frontal et déclencher le virage
 #define SEUIL_CORRECTION_GAUCHE 45 // Distance (mm) min avec le mur gauche avant de corriger la trajectoire
 #define SEUIL_CORRECTION_DROITE 45 // Distance (mm) min avec le mur droit avant de corriger la trajectoire
-#define SEUIL_COULOIR_LIBRE 100    // Distance (mm) frontale requise pour considérer que le virage est terminé
+#define SEUIL_COULOIR_LIBRE 160    // Distance (mm) frontale requise pour considérer que le virage est terminé
 // ------------------------------------------
 
 #define CAPTEUR_GAUCHE 2

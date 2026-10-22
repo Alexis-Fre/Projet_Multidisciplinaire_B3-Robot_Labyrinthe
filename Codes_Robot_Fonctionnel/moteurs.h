@@ -22,31 +22,34 @@ void arreter() {
 
 void avancer(bool correction_gauche = false, bool correction_droite = false) {
   if (correction_gauche) {
-    // CORRECTION DOUCE vers la gauche (on ralentit la roue gauche)
-    servoGauche.writeMicroseconds(1550); 
-    servoDroite.writeMicroseconds(1420);
+    // CORRECTION DOUCE : On ralentit un peu la roue gauche (1570 au lieu de 1650)
+    // La roue droite continue de pousser fort (1380)
+    servoGauche.writeMicroseconds(1570); 
+    servoDroite.writeMicroseconds(1380);
   } 
   else if (correction_droite) {
-    // CORRECTION DOUCE vers la droite (on ralentit la roue droite)
-    // On conserve la nouvelle puissance augmentée de la roue gauche
-    servoGauche.writeMicroseconds(1600);
-    servoDroite.writeMicroseconds(1450); 
+    // CORRECTION DOUCE : On ralentit un peu la roue droite (1430 au lieu de 1380)
+    servoGauche.writeMicroseconds(1650);
+    servoDroite.writeMicroseconds(1430); 
   } 
   else {
-    // Ligne droite : Roue gauche boostée à 1600 pour contrer la dérive à gauche
-    servoDroite.writeMicroseconds(1420); 
-    servoGauche.writeMicroseconds(1600); 
+    // VITESSE V2 : Augmentation d'environ 40-50µs par rapport à la V1
+    // (L'écart compensatoire pour rouler droit est conservé)
+    servoDroite.writeMicroseconds(1380); 
+    servoGauche.writeMicroseconds(1650); 
   }
 }
 
 void demarrer_tourner_droite() {
-  servoGauche.writeMicroseconds(1550);
-  servoDroite.writeMicroseconds(1550);
+  // Rotations accélérées pour dégager les murs plus vite
+  servoGauche.writeMicroseconds(1580);
+  servoDroite.writeMicroseconds(1580);
 }
 
 void demarrer_tourner_gauche() {
-  servoGauche.writeMicroseconds(1450);
-  servoDroite.writeMicroseconds(1450);
+  // Rotations accélérées pour dégager les murs plus vite
+  servoGauche.writeMicroseconds(1420);
+  servoDroite.writeMicroseconds(1420);
 }
 
 #endif
