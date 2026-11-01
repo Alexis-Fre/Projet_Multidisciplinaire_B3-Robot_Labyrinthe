@@ -1,0 +1,2508 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "d6778cc1-5bc8-47dd-a9a5-e765e0083cd5")
+	(paper "A4")
+	(title_block
+		(title "Schematic Robot Complet")
+		(date "2026-10-31")
+	)
+	(lib_symbols
+		(symbol "KiCAD_Personal_components:Pololu_VL6180X"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "VL6180X"
+				(at 2.794 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Pololu_VL6180X_0_1"
+				(rectangle
+					(start -7.62 12.7)
+					(end 7.62 -12.7)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Pololu_VL6180X_1_1"
+				(pin power_in line
+					(at -10.16 11.43 0)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 7.62 0)
+					(length 2.54)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 3.81 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 -3.81 0)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 -7.62 0)
+					(length 2.54)
+					(name "GPIO0/EC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 -11.43 0)
+					(length 2.54)
+					(name "GPIO1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "MCU_Module:Arduino_UNO_R3"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "A"
+				(at -10.16 23.495 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "Arduino_UNO_R3"
+				(at 5.08 -26.67 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Module:Arduino_UNO_R3"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.arduino.cc/en/Main/arduinoBoardUno"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Arduino UNO Microcontroller Module, release 3"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Arduino UNO R3 Microcontroller Module Atmel AVR USB"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Arduino*UNO*R3*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Arduino_UNO_R3_0_1"
+				(rectangle
+					(start -10.16 22.86)
+					(end 10.16 -25.4)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Arduino_UNO_R3_1_1"
+				(pin no_connect line
+					(at -10.16 -20.32 0)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 10.16 180)
+					(length 2.54)
+					(name "IOREF"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 15.24 180)
+					(length 2.54)
+					(name "~{RESET}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 2.54 25.4 270)
+					(length 2.54)
+					(name "3V3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 5.08 25.4 270)
+					(length 2.54)
+					(name "+5V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -27.94 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 2.54 -27.94 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 25.4 270)
+					(length 2.54)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 0 180)
+					(length 2.54)
+					(name "A0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -2.54 180)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -5.08 180)
+					(length 2.54)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -7.62 180)
+					(length 2.54)
+					(name "A3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -10.16 180)
+					(length 2.54)
+					(name "SDA/A4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -12.7 180)
+					(length 2.54)
+					(name "SCL/A5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 15.24 0)
+					(length 2.54)
+					(name "D0/RX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 12.7 0)
+					(length 2.54)
+					(name "D1/TX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 10.16 0)
+					(length 2.54)
+					(name "D2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 7.62 0)
+					(length 2.54)
+					(name "D3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 5.08 0)
+					(length 2.54)
+					(name "D4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 2.54 0)
+					(length 2.54)
+					(name "D5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 0 0)
+					(length 2.54)
+					(name "D6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -2.54 0)
+					(length 2.54)
+					(name "D7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "22"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -5.08 0)
+					(length 2.54)
+					(name "D8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "23"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -7.62 0)
+					(length 2.54)
+					(name "D9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "24"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -10.16 0)
+					(length 2.54)
+					(name "D10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "25"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -12.7 0)
+					(length 2.54)
+					(name "D11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "26"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -15.24 0)
+					(length 2.54)
+					(name "D12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "27"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -17.78 0)
+					(length 2.54)
+					(name "D13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "28"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -27.94 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "29"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 5.08 180)
+					(length 2.54)
+					(name "AREF"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "30"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -17.78 180)
+					(length 2.54)
+					(name "SDA/A4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "31"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -20.32 180)
+					(length 2.54)
+					(name "SCL/A5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "32"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Motor:Motor_Servo"
+			(pin_names
+				(offset 0.0254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "M"
+				(at -5.08 4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Motor_Servo"
+				(at -5.08 -4.064 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "http://forums.parallax.com/uploads/attachments/46831/74481.png"
+				(at 0 -4.826 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Servo Motor (Futaba, HiTec, JR connector)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Servo Motor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "PinHeader*P2.54mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Motor_Servo_0_1"
+				(polyline
+					(pts
+						(xy 2.413 1.778) (xy 1.905 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.413 1.778) (xy 2.286 1.397)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.413 -1.778) (xy 2.032 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.413 -1.778) (xy 2.286 -1.397)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.413 -1.778)
+					(mid 1.2406 0)
+					(end 2.413 1.778)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 3.175 0)
+					(radius 0.1778)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 3.175 0)
+					(radius 1.4224)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 3.556) (xy -5.08 3.556) (xy -5.08 -3.556) (xy 6.35 -3.556) (xy 6.35 1.524)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 5.969 2.794)
+					(radius 0.127)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.35 4.445) (xy 2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 6.477 3.302)
+					(radius 0.127)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 6.35 4.445)
+					(mid 7.4487 4.2737)
+					(end 7.62 3.175)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 6.985 3.81)
+					(radius 0.127)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 3.175) (xy 4.191 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Motor_Servo_1_1"
+				(pin passive line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "PWM"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(junction
+		(at 135.89 64.77)
+		(diameter 0)
+		(color 0 0 0 1)
+		(uuid "0bf0072a-d50f-4fbc-b108-6e73be715f80")
+	)
+	(junction
+		(at 139.7 62.23)
+		(diameter 0)
+		(color 137 81 41 1)
+		(uuid "0d93464f-d7f7-4b7b-b55d-d447e000cf4f")
+	)
+	(junction
+		(at 163.83 59.69)
+		(diameter 0)
+		(color 0 255 255 1)
+		(uuid "1b8b7c22-a970-4140-80d8-5f2e0829f33b")
+	)
+	(junction
+		(at 160.02 62.23)
+		(diameter 0)
+		(color 137 81 41 1)
+		(uuid "23b24239-aeb1-46be-9f01-5727722eecc6")
+	)
+	(junction
+		(at 143.51 59.69)
+		(diameter 0)
+		(color 0 255 255 1)
+		(uuid "40eb5da2-31e4-4554-a7ef-8ec777c906f4")
+	)
+	(junction
+		(at 104.14 78.74)
+		(diameter 0)
+		(color 255 0 0 1)
+		(uuid "5d8563dc-4db6-492c-8b2b-23dd6168bf3a")
+	)
+	(junction
+		(at 96.52 64.77)
+		(diameter 0)
+		(color 0 0 0 1)
+		(uuid "6127cdec-2a92-4ec4-980f-d8b85aa7e1b2")
+	)
+	(junction
+		(at 144.78 78.74)
+		(diameter 0)
+		(color 255 0 0 1)
+		(uuid "6d6a1ce7-4010-42ed-8c09-685899f21dfc")
+	)
+	(junction
+		(at 96.52 92.71)
+		(diameter 0)
+		(color 0 0 0 1)
+		(uuid "9e15291c-19ec-4705-a7f9-40bd77548be7")
+	)
+	(junction
+		(at 137.16 144.78)
+		(diameter 0)
+		(color 0 0 0 1)
+		(uuid "a7506c37-95f3-47c8-a6e1-a2f57703a201")
+	)
+	(junction
+		(at 132.08 78.74)
+		(diameter 0)
+		(color 255 0 0 1)
+		(uuid "b9c0a78b-6b48-485e-b76f-953f06a556a1")
+	)
+	(junction
+		(at 170.18 78.74)
+		(diameter 0)
+		(color 255 0 0 1)
+		(uuid "efbc8a36-1068-483e-9b62-cb0b184b6610")
+	)
+	(wire
+		(pts
+			(xy 179.07 144.78) (xy 137.16 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "005ccd06-49c5-4fce-9b21-dd2325e3d121")
+	)
+	(wire
+		(pts
+			(xy 170.18 78.74) (xy 144.78 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "033a6c68-545f-4af7-85bf-3c3a1f9f3a11")
+	)
+	(wire
+		(pts
+			(xy 100.33 43.18) (xy 100.33 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 137 81 41 1)
+		)
+		(uuid "074f4148-1de1-49b4-b548-ac5db9d9a9ca")
+	)
+	(wire
+		(pts
+			(xy 96.52 144.78) (xy 137.16 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "08cf495e-ce3f-4e03-80f1-74b3998b0015")
+	)
+	(wire
+		(pts
+			(xy 144.78 78.74) (xy 144.78 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "0b6c3d29-d4cf-4d37-850d-6ac5cf92c1a5")
+	)
+	(wire
+		(pts
+			(xy 104.14 95.25) (xy 104.14 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "0e10d948-d37f-4f30-96f3-072ba4398206")
+	)
+	(wire
+		(pts
+			(xy 96.52 92.71) (xy 96.52 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "118a5549-7e26-4d82-b3f1-35f61c971f5d")
+	)
+	(wire
+		(pts
+			(xy 177.8 62.23) (xy 160.02 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 137 81 41 1)
+		)
+		(uuid "14fb422f-760f-41e2-8ff2-ce60a6a71039")
+	)
+	(wire
+		(pts
+			(xy 91.44 97.79) (xy 105.41 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "178d15c8-0fe2-4a6e-9a21-48b22029ea93")
+	)
+	(wire
+		(pts
+			(xy 105.41 118.11) (xy 127 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a8d1717-302a-4241-bde6-44556d65e183")
+	)
+	(wire
+		(pts
+			(xy 104.14 43.18) (xy 104.14 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 255 255 1)
+		)
+		(uuid "1b675294-1f96-4f19-a761-ac6ac7a6bd54")
+	)
+	(wire
+		(pts
+			(xy 147.32 43.18) (xy 147.32 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 255 1)
+		)
+		(uuid "26fd0b82-8aff-429b-872a-3644fb3ef124")
+	)
+	(wire
+		(pts
+			(xy 120.65 68.58) (xy 120.65 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 255 1)
+		)
+		(uuid "369e4178-46b4-4940-a11f-f8c839f5e9e8")
+	)
+	(wire
+		(pts
+			(xy 170.18 43.18) (xy 170.18 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "3b3743e6-4349-4770-be18-18afa7bb08d6")
+	)
+	(wire
+		(pts
+			(xy 96.52 64.77) (xy 96.52 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "42e475d4-db58-407b-9b84-5ca8dcb2c762")
+	)
+	(wire
+		(pts
+			(xy 105.41 97.79) (xy 105.41 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "452fd361-5037-4f2a-ad8d-d265fd17ebbc")
+	)
+	(wire
+		(pts
+			(xy 160.02 128.27) (xy 152.4 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 137 81 41 1)
+		)
+		(uuid "4de3978f-2cc7-4466-b041-501540a50167")
+	)
+	(wire
+		(pts
+			(xy 181.61 59.69) (xy 163.83 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 255 255 1)
+		)
+		(uuid "59fad455-264c-4f8e-9cc8-0934ad9bec58")
+	)
+	(wire
+		(pts
+			(xy 185.42 76.2) (xy 123.19 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 153 0 1)
+		)
+		(uuid "5ab2a4ef-7acb-4966-bf12-be0d4824c051")
+	)
+	(wire
+		(pts
+			(xy 107.95 100.33) (xy 127 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 255 1)
+		)
+		(uuid "5ba95425-02ca-4584-8591-557ed73d16b8")
+	)
+	(wire
+		(pts
+			(xy 179.07 97.79) (xy 179.07 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "5c54090a-2907-4af9-b1bb-1ab9946f66c9")
+	)
+	(wire
+		(pts
+			(xy 184.15 97.79) (xy 179.07 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "5fe9facb-ad1f-448f-adb1-23f365d42768")
+	)
+	(wire
+		(pts
+			(xy 135.89 43.18) (xy 135.89 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "72b013e0-818f-4e73-892b-d6c297aca3dc")
+	)
+	(wire
+		(pts
+			(xy 163.83 130.81) (xy 163.83 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 255 255 1)
+		)
+		(uuid "76501d01-cb24-4d60-8a2e-6455d2b3fad9")
+	)
+	(wire
+		(pts
+			(xy 152.4 130.81) (xy 163.83 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 255 255 1)
+		)
+		(uuid "7f0a4599-5c26-426a-a6ba-bd0aa54dab6c")
+	)
+	(wire
+		(pts
+			(xy 181.61 59.69) (xy 181.61 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 255 255 1)
+		)
+		(uuid "85b1856f-28d2-4de6-ae15-3bc5be98ace5")
+	)
+	(wire
+		(pts
+			(xy 177.8 43.18) (xy 177.8 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 137 81 41 1)
+		)
+		(uuid "8befa1e6-e742-4d46-8916-94c5ac905af4")
+	)
+	(wire
+		(pts
+			(xy 147.32 68.58) (xy 120.65 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 255 1)
+		)
+		(uuid "8bf4267e-b4f4-4872-9292-b0a6cc60352b")
+	)
+	(wire
+		(pts
+			(xy 185.42 43.18) (xy 185.42 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 153 0 1)
+		)
+		(uuid "91cd2e89-7c5f-4518-9964-a2ab40707ff1")
+	)
+	(wire
+		(pts
+			(xy 143.51 43.18) (xy 143.51 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 255 255 1)
+		)
+		(uuid "9269c850-8781-43fa-a345-3324ae86c677")
+	)
+	(wire
+		(pts
+			(xy 160.02 62.23) (xy 160.02 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 137 81 41 1)
+		)
+		(uuid "95f307ab-769b-42d2-a95c-f450f185ac84")
+	)
+	(wire
+		(pts
+			(xy 175.26 92.71) (xy 175.26 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 255 0 1)
+		)
+		(uuid "9ba2a50f-ab05-4370-8d8e-d2ed3d610bbb")
+	)
+	(wire
+		(pts
+			(xy 96.52 43.18) (xy 96.52 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "9cd78077-7fbb-466a-abe8-7dcefe6dcf5c")
+	)
+	(wire
+		(pts
+			(xy 139.7 43.18) (xy 139.7 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 137 81 41 1)
+		)
+		(uuid "9cd80f0d-d631-4e01-9b43-e9c045d71049")
+	)
+	(wire
+		(pts
+			(xy 92.71 78.74) (xy 104.14 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "9f875a61-08d9-4757-bcfb-0cdc61c88198")
+	)
+	(wire
+		(pts
+			(xy 91.44 92.71) (xy 96.52 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "a9f20c9b-b6f8-4521-89e9-1280049f06e6")
+	)
+	(wire
+		(pts
+			(xy 170.18 95.25) (xy 170.18 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "b5484e81-1dab-4a5f-8d9d-b239b0512762")
+	)
+	(wire
+		(pts
+			(xy 173.99 43.18) (xy 173.99 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "b734bf55-e287-4bdc-8b5d-b4dfc1ffe23c")
+	)
+	(wire
+		(pts
+			(xy 91.44 95.25) (xy 104.14 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "bc1d5e88-28e4-4212-94a4-41f7212a37a0")
+	)
+	(wire
+		(pts
+			(xy 104.14 78.74) (xy 144.78 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "bc32f388-f34e-4c22-ab12-f3ab1d63ef3f")
+	)
+	(wire
+		(pts
+			(xy 107.95 43.18) (xy 107.95 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 255 1)
+		)
+		(uuid "beee9e8d-d47d-42b1-92dc-681dde78ef68")
+	)
+	(wire
+		(pts
+			(xy 104.14 59.69) (xy 163.83 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 255 255 1)
+		)
+		(uuid "c404dbd4-a7ba-471b-9622-84d99e1e4de9")
+	)
+	(wire
+		(pts
+			(xy 92.71 43.18) (xy 92.71 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "c7653b0b-6ad4-4497-99f2-5d23bd7c5cec")
+	)
+	(wire
+		(pts
+			(xy 96.52 64.77) (xy 173.99 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "c889cf3b-abfa-42c6-81d1-0bb1b8dbcce2")
+	)
+	(wire
+		(pts
+			(xy 184.15 92.71) (xy 175.26 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 255 0 1)
+		)
+		(uuid "ca2b68db-f557-45ed-b4bd-5ab9b7dc6f7a")
+	)
+	(wire
+		(pts
+			(xy 100.33 62.23) (xy 160.02 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 137 81 41 1)
+		)
+		(uuid "d38a5ace-85fa-464a-ba0f-00c5b9327911")
+	)
+	(wire
+		(pts
+			(xy 184.15 95.25) (xy 170.18 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "d5fa60d1-e732-4e97-bfbd-6fe331415620")
+	)
+	(wire
+		(pts
+			(xy 114.3 140.97) (xy 114.3 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 255 0 1)
+		)
+		(uuid "d8840fab-99ae-4ee3-a306-ac60943ecd85")
+	)
+	(wire
+		(pts
+			(xy 132.08 43.18) (xy 132.08 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 0 1)
+		)
+		(uuid "dc395cc7-e222-41a9-8493-1390f642ba81")
+	)
+	(wire
+		(pts
+			(xy 137.16 144.78) (xy 137.16 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 0 0 1)
+		)
+		(uuid "ec57e294-2b54-405f-8b89-bc322595fbd0")
+	)
+	(wire
+		(pts
+			(xy 114.3 120.65) (xy 127 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 255 0 1)
+		)
+		(uuid "edf81198-59f2-4916-b71b-7caf81f90427")
+	)
+	(wire
+		(pts
+			(xy 123.19 76.2) (xy 123.19 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 153 0 1)
+		)
+		(uuid "edf94101-000b-41b4-889f-fbb9588f2b7a")
+	)
+	(wire
+		(pts
+			(xy 175.26 140.97) (xy 114.3 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 255 0 1)
+		)
+		(uuid "f853d66f-0275-4157-b918-7d7af65daddb")
+	)
+	(wire
+		(pts
+			(xy 123.19 105.41) (xy 127 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 153 0 1)
+		)
+		(uuid "fa062c9f-8099-4a1a-9f4b-8a4f9eacb6e4")
+	)
+	(wire
+		(pts
+			(xy 120.65 102.87) (xy 127 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 0 255 1)
+		)
+		(uuid "ff6dd57a-c52d-4c14-add7-0d73fcd0fbf4")
+	)
+	(symbol
+		(lib_id "Motor:Motor_Servo")
+		(at 191.77 95.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1c02662e-7a6c-439e-844e-d0a130b66879")
+		(property "Reference" "M1"
+			(at 200.66 93.5468 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Motor_Servo"
+			(at 200.66 96.0868 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 191.77 100.076 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://forums.parallax.com/uploads/attachments/46831/74481.png"
+			(at 191.77 100.076 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Servo Motor (Futaba, HiTec, JR connector)"
+			(at 191.77 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1e1f7b3f-5742-4a81-87ce-a3c571871bde")
+		)
+		(pin "2"
+			(uuid "86ee654c-fd6a-4643-870f-efd70e14860a")
+		)
+		(pin "3"
+			(uuid "5bd941a7-e4af-4751-a3b7-b70b639ea239")
+		)
+		(instances
+			(project "Schematic Robot Complet"
+				(path "/d6778cc1-5bc8-47dd-a9a5-e765e0083cd5"
+					(reference "M1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Motor:Motor_Servo")
+		(at 83.82 95.25 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2a9baca9-b827-45be-8142-0f961a62a283")
+		(property "Reference" "M2"
+			(at 82.5639 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Motor_Servo"
+			(at 82.5639 88.9 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 83.82 90.424 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://forums.parallax.com/uploads/attachments/46831/74481.png"
+			(at 83.82 90.424 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Servo Motor (Futaba, HiTec, JR connector)"
+			(at 83.82 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1f16a38c-4789-4820-a29c-287047eec4b6")
+		)
+		(pin "2"
+			(uuid "4ea9ff02-e5f5-4baf-b36a-91fdb7d5bd2e")
+		)
+		(pin "3"
+			(uuid "426c30c8-0a80-4f7e-b4ea-c22385066bee")
+		)
+		(instances
+			(project "Schematic Robot Complet"
+				(path "/d6778cc1-5bc8-47dd-a9a5-e765e0083cd5"
+					(reference "M2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "KiCAD_Personal_components:Pololu_VL6180X")
+		(at 100.33 33.02 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6f851bc6-8fb7-444c-981b-f2b032e68e1c")
+		(property "Reference" "VL6180X1"
+			(at 91.44 29.718 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" ""
+			(at 100.33 33.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 100.33 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 100.33 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 100.33 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "6"
+			(uuid "ffccfa85-1b6c-48a6-9b05-44cbd08496f5")
+		)
+		(pin "5"
+			(uuid "2071b3a4-f33c-487d-b9aa-9fd744c139b5")
+		)
+		(pin "2"
+			(uuid "f761f07d-43bd-473f-8ebe-0c34df51ff8a")
+		)
+		(pin "3"
+			(uuid "6149ba10-6eeb-4724-8778-7e2c5690367d")
+		)
+		(pin "7"
+			(uuid "ea949883-7e0a-496a-874d-74b153c54011")
+		)
+		(pin "4"
+			(uuid "b63e479b-3678-4706-a753-ac1763bef7fd")
+		)
+		(pin "1"
+			(uuid "83081e05-69d2-4fe7-bd66-6736139183dd")
+		)
+		(instances
+			(project "Schematic Robot Complet"
+				(path "/d6778cc1-5bc8-47dd-a9a5-e765e0083cd5"
+					(reference "VL6180X1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MCU_Module:Arduino_UNO_R3")
+		(at 139.7 110.49 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "87b56c85-48fc-43e4-b48a-8a0c08560639")
+		(property "Reference" "A1"
+			(at 146.9233 82.55 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Arduino_UNO_R3"
+			(at 146.9233 85.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Module:Arduino_UNO_R3"
+			(at 139.7 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.arduino.cc/en/Main/arduinoBoardUno"
+			(at 139.7 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Arduino UNO Microcontroller Module, release 3"
+			(at 139.7 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "29"
+			(uuid "bf4aa02c-c804-4acb-a7e7-00212d021f60")
+		)
+		(pin "6"
+			(uuid "af90d9f2-5c6b-45f3-8fb0-29662af6c691")
+		)
+		(pin "27"
+			(uuid "18f78a61-f2b3-4755-a905-39759eb28d2f")
+		)
+		(pin "20"
+			(uuid "d54084f8-caf9-40ea-aadb-1a79961d049d")
+		)
+		(pin "4"
+			(uuid "4c60c120-bdeb-4a75-b96f-d0b905821b4f")
+		)
+		(pin "1"
+			(uuid "0c375371-e67b-4835-beb9-2d4fc9e60029")
+		)
+		(pin "2"
+			(uuid "a28b089b-fea0-415c-bc8e-5994810c89dc")
+		)
+		(pin "7"
+			(uuid "5301065a-a79d-4119-83cc-d50f51ed9e7d")
+		)
+		(pin "30"
+			(uuid "8a09e230-01d7-4b20-a05e-9136295ad92a")
+		)
+		(pin "18"
+			(uuid "0c15c8be-29aa-4c3c-aa61-27b6a71dac51")
+		)
+		(pin "3"
+			(uuid "4d30e858-f462-47e1-8bbf-b8d7b7671898")
+		)
+		(pin "17"
+			(uuid "a4f6f2a9-1005-4577-b33f-93d5885ac136")
+		)
+		(pin "21"
+			(uuid "e65276ec-5920-46f0-985e-131172b5cfc8")
+		)
+		(pin "5"
+			(uuid "4c1e589a-8c0c-417b-8b8a-ab17806717db")
+		)
+		(pin "19"
+			(uuid "5d1a4e7c-b300-4f35-adca-2ad90894b459")
+		)
+		(pin "22"
+			(uuid "b8e457f6-bbc0-4d5d-8eee-ca305c8b59f3")
+		)
+		(pin "28"
+			(uuid "13454b67-52bd-4716-9856-8efb5413b1d0")
+		)
+		(pin "25"
+			(uuid "90c07230-784d-439d-86d3-535661342abb")
+		)
+		(pin "23"
+			(uuid "85c3a282-c956-4d03-9e7c-c843c827397b")
+		)
+		(pin "8"
+			(uuid "58ab4fac-f535-4016-9174-3b6870aa7594")
+		)
+		(pin "9"
+			(uuid "cf61a405-11b5-4bc4-b50a-cfe0ba7bbe62")
+		)
+		(pin "32"
+			(uuid "6f5d1844-aad4-4c25-b5c8-7dcb945f2507")
+		)
+		(pin "26"
+			(uuid "b219db61-de1d-4d13-80b3-3e342f38894d")
+		)
+		(pin "31"
+			(uuid "eeaee163-ba09-4164-a510-fada30a5b947")
+		)
+		(pin "24"
+			(uuid "7002c999-1b8c-4444-8889-138cad7512f2")
+		)
+		(pin "10"
+			(uuid "a1b38f90-6d66-48d9-bf64-92e135d627ab")
+		)
+		(pin "11"
+			(uuid "b611921c-850c-48bd-815a-1082da588cb9")
+		)
+		(pin "12"
+			(uuid "c32621e0-6df2-45c8-ae3b-23594eb0d563")
+		)
+		(pin "13"
+			(uuid "9ea9e7b1-0cab-436a-9f7c-db9b7093605e")
+		)
+		(pin "14"
+			(uuid "7fe623d9-9795-46e5-b85c-4f9fb74c65b9")
+		)
+		(pin "15"
+			(uuid "09ee4663-935b-400e-81a7-06e7befee701")
+		)
+		(pin "16"
+			(uuid "ab8302ff-3eaa-43cf-a1c2-8a3eb450f294")
+		)
+		(instances
+			(project "Schematic Robot Complet"
+				(path "/d6778cc1-5bc8-47dd-a9a5-e765e0083cd5"
+					(reference "A1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "KiCAD_Personal_components:Pololu_VL6180X")
+		(at 139.7 33.02 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d72d39d3-a009-4fc6-8ce7-85a4c9cc3f02")
+		(property "Reference" "VL6180X2"
+			(at 130.556 30.988 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" ""
+			(at 139.7 33.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 139.7 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 139.7 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 139.7 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "6"
+			(uuid "83d4ae65-fde9-404d-bee6-e21e4f8e05e6")
+		)
+		(pin "5"
+			(uuid "3b5ea6cd-3dd5-434e-85f6-3f1117c501b0")
+		)
+		(pin "2"
+			(uuid "50ac2528-d55f-4a2e-96f9-6263754a2d2a")
+		)
+		(pin "3"
+			(uuid "9c516ccd-427e-4a69-8d40-9509a5cdc0ce")
+		)
+		(pin "7"
+			(uuid "c3178e8b-04fa-489f-9145-2e70902f1054")
+		)
+		(pin "4"
+			(uuid "9c8fe284-5649-4979-b00b-feeeebe1a4ef")
+		)
+		(pin "1"
+			(uuid "950b96a3-4e93-4e6e-89e0-57cf83864a63")
+		)
+		(instances
+			(project "Schematic Robot Complet"
+				(path "/d6778cc1-5bc8-47dd-a9a5-e765e0083cd5"
+					(reference "VL6180X2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "KiCAD_Personal_components:Pololu_VL6180X")
+		(at 177.8 33.02 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "da50660c-bc31-4797-a94d-047209eab565")
+		(property "Reference" "VL6180X3"
+			(at 170.688 29.718 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" ""
+			(at 177.8 33.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 177.8 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 177.8 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 177.8 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "6"
+			(uuid "c6a25f45-56ee-4316-957d-8ef854e24646")
+		)
+		(pin "5"
+			(uuid "aedda068-eed2-4ce6-a8af-c0992cd579d0")
+		)
+		(pin "2"
+			(uuid "f77f0a18-48cb-4a7d-b3fd-60f8789de212")
+		)
+		(pin "3"
+			(uuid "6a5e6520-eef2-4287-a5fc-6deda74ca889")
+		)
+		(pin "7"
+			(uuid "6dcce1bd-e49a-49df-bbf9-17eb552869af")
+		)
+		(pin "4"
+			(uuid "8f39679d-e419-454d-96fc-b350ed96044f")
+		)
+		(pin "1"
+			(uuid "e66c9ef2-8f41-441b-b834-fd371dc0aab0")
+		)
+		(instances
+			(project "Schematic Robot Complet"
+				(path "/d6778cc1-5bc8-47dd-a9a5-e765e0083cd5"
+					(reference "VL6180X3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
