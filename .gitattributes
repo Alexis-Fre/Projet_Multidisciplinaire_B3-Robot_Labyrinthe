@@ -1,0 +1,18 @@
+# Normalise automatiquement les fins de ligne en LF (évite les conflits Windows/Linux)
+* text=auto eol=lf
+
+# Force Git à traiter ces formats comme des binaires (pas de diff ni de fusion texte)
+*.PNG binary
+*.png binary
+*.JPG binary
+*.jpg binary
+*.JPEg binary
+*.jpeg binary
+*.PDF binary
+*.pdf binary
+*.ZIP binary
+*.zip binary
+
+# Exclut les fichiers de configuration lors d'un export avec git archive
+.gitignore export-ignore
+.gitattributes export-ignore
