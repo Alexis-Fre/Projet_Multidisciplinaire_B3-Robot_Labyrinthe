@@ -1,0 +1,47 @@
+========================================================================
+SCRIPT VOIX-OFF (EN ANGLAIS) — PROJET ROBOTIQUE B3 UNILASALLE AMIENS
+Binôme : Papa Mbaye DIOP & Alexis FREVILLE
+Consigne : Enregistrez chacun vos 4 blocs sur téléphone (Dictaphone)
+au calme, en articulant posément (environ 10 à 25 sec par bloc).
+Pas besoin de filmer vos visages !
+========================================================================
+
+------------------------------------------------------------------------
+[BLOC 1 — ALEXIS]  (Visuel : Slide Intro + Photo Robot Assemblé | ~18s)
+------------------------------------------------------------------------
+"Hello everyone. Welcome to our Bachelor 3 multidisciplinary robotics project at UniLaSalle Amiens. Together with Papa Mbaye, we designed, built, and programmed an autonomous mobile robot capable of navigating an unknown maze as fast as possible, with zero human intervention after startup."
+
+------------------------------------------------------------------------
+[BLOC 2 — PAPA MBAYE]  (Visuel : Vidéos Châssis, Roues & Bille | ~22s)
+------------------------------------------------------------------------
+"From a mechanical standpoint, our robot uses a differential drive architecture with two independent motorized wheels and a front omnidirectional ball caster for stability. Using the base chassis STL file, we measured the exact clearances to integrate all onboard components while allowing tight, zero-radius turns inside narrow maze corridors."
+
+------------------------------------------------------------------------
+[BLOC 3 — ALEXIS]  (Visuel : Slide Capteurs 135° + Support 3D | ~22s)
+------------------------------------------------------------------------
+"For environment perception, instead of mounting our three Pololu VL6180X laser Time-of-Flight sensors at ninety degrees, we designed a custom 3D-printed mount in Onshape with a 135-degree fan angle. This eliminates front-lateral blind spots, letting the robot center itself smoothly and detect upcoming intersections early."
+
+------------------------------------------------------------------------
+[BLOC 4 — PAPA MBAYE]  (Visuel : Vidéos Maker UNO, Shield + Schéma I2C | ~28s)
+------------------------------------------------------------------------
+"On the electronics side, the robot is controlled by a Maker UNO board paired with an I/O expansion shield. Because all three VL6180X sensors share the same default 0x29 I2C address, we used their Chip Enable pins on digital outputs D2, D3, and D4 to wake them up sequentially at boot and assign them distinct addresses: 0x30, 0x31, and 0x32."
+
+------------------------------------------------------------------------
+[BLOC 5 — ALEXIS]  (Visuel : Vidéos Servos, Étalonnage & Batterie | ~25s)
+------------------------------------------------------------------------
+"Propulsion is driven by two continuous-rotation servomotors calibrated to a 1500-microsecond neutral point, and tuned with asymmetric PWM signals—1900 and 1150 microseconds—to guarantee a perfectly straight trajectory. Everything is powered autonomously by an onboard 5-volt power bank mounted on the chassis."
+
+------------------------------------------------------------------------
+[BLOC 6 — PAPA MBAYE]  (Visuel : Slide Machine à États Finis | ~20s)
+------------------------------------------------------------------------
+"For the embedded C++ software, we replaced blocking delays with a non-blocking finite state machine running every 30 milliseconds via millis(). When a front wall is detected under 85 millimeters, the robot compares left and right clearances and pivots until the front sensor confirms an open corridor beyond 150 millimeters."
+
+------------------------------------------------------------------------
+[BLOC 7 — ALEXIS]  (Visuel : Slide Démo + Vidéo Parcours Labyrinthe | ~20s)
+------------------------------------------------------------------------
+"Here is our robot in action during the autonomous maze test. After a 10-second safety delay at startup, it navigates straight corridors with live wall centering, handles 90-degree turns cleanly, and escapes dead-ends completely on its own."
+
+------------------------------------------------------------------------
+[BLOC 8 — PAPA MBAYE]  (Visuel : Robot Assemblé + Slide Conclusion | ~18s)
+------------------------------------------------------------------------
+"To take this project further, future upgrades would include Flood-Fill maze mapping for a high-speed second run, an IMU sensor for PID turn control, and wheel encoders for odometry. Thank you for watching!"
